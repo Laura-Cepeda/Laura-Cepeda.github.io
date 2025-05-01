@@ -1,0 +1,87 @@
+        #header {
+            background-image: url('1712318853269.jpg'); 
+            background-size: cover;
+            height: 350px;
+            background-position: center;
+            font-family: Arial, sans-serif; /* Adding a fallback font */
+            width:100%;
+        }
+          /* Add more CSS styles as needed */
+        header, nav, main, footer {
+            padding: 20px;
+        }
+
+        .navigationlinks {
+          background-color:gainsboro;
+          
+
+          
+         }
+        /* Add more specific styles for header, nav, main, and footer if necessary */
+        #navigation{
+            background-color: #FFF0F5;
+            /*padding: 6px;*/
+             padding: 3px 0 10px 10px;
+             border: 1px solid black;
+
+        }
+
+        h1 { 
+         display: block;
+         font-size: 1.3em;
+         margin-top: 0.77em;
+         margin-bottom: 0.67em;
+         margin-left: 0;
+         margin-right: 0;
+        font-weight: lighter;
+         }
+         #content{
+            background-color: #D3D3D3;
+            padding: 30px;
+         }
+
+
+ /* IS MOT APPLYING TO THE FOOTER IM not sure what im doing wrong*/
+         #footer{
+          padding: 6px 40px 6px 40px;
+          background: #d6d6d6;
+          font-family: "Lucida Sans Unicode";
+          color:#444444;
+          font-size: 11px;
+          text-decoration: right;
+         }
+
+        /* CSS for Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+   
+
+   /*******Lesson1 page style is here */
+        #lesson1{
+        }
