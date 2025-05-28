@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura's GitHub HTML Page</title>
+    <style>
+  
+/* General Styles test */
+body, h1, #nav, ul, li, a, div {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+
+html, body {
+height: 100%;
+display: flex;
+flex-direction: column;
+background: #ffffff;
+}
+
+
+#main-container {
+flex: 1; 
+max-width: 1024px;
+min-width: 320px;
+margin: 0 auto;
+padding:0px;
+background-color: 000000;
+margin-top: 0px; 
+}
+
+
+
+
+/* Header Styles */
+#header {
+position: relative; /* Positioning context for the pseudo-element */
+min-height: 350px;
+border:solid 0px;
+background: url('images/wideheader.jpg');
+background-size: auto 350px; 
+background-position: top center;
+display: flex;
+flex-direction: column;
+justify-content: flex-end; 
+align-items: center; 
+}
+
+/* Welcome Section */
+#welcome {
+border:solid 0px;width:70%;height:70%;
+background: url('images/signature.png'); background-size:contain;background-repeat:no-repeat;
+background-position: 50% 50%;
+position:absolute;
+top:20%; 
+}
+
+/* Content Styles */
+#content h1 {
+font-size: 1.3em;
+font-weight: lighter;
+margin: 0.77em 0 0.67em;
+}
+
+/* Footer Styles */
+#footer {
+position: relative; /* Positioning context for the pseudo-element */
+min-height: 350px;
+border:solid 0px;
+background: url('images/footer-trans.png');
+background-size: auto 350px; 
+background-position: top center;  
+flex-direction: column;
+justify-content: flex-end; 
+align-items: center; 
+}
+
+#content p{color:#333333;font-size:24px;font-weight:bold;}
+#content {border:solid 0px;position:relative;top:-46px;}
+#content a{color:#ff9900;}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+          <div id="header">
+        <div id="welcome"></div>
+
+    </div>   
+    <div id="main-container">
+ 
+
+    
+        <div id="content">
+            <p style="text-align: center;">Here is a link to my github repository<br> 
+                <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io"><strong>https://github.com/Laura-Cepeda/Laura-Cepeda.github.io</strong></a>
+                                
+            </p>
+        </div>
+   
+
+   
+</div> <div id="footer">
+        
+    </div>
+</div>
+
+</body>
+</html>
