@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laura's GitHub HTML Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,36 +14,48 @@
 
     html, body {
       height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-    }
-
-    #header, #footer {
-      height: 350px;
-      background-size: cover;
-      background-position: center;
     }
 
     #header {
       background-image: url('images/wideheader.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 25%;
       position: relative;
+      overflow: hidden;
+      height: auto;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: clamp(40px, 15%, 80px);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, #ffffff 100%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     #welcome {
-      position: absolute;
-      top: 38%;
-      left: 0;
-      right: 0;
-      height: 53%;
-      width: 70%;
-      margin: 0 auto;
+      width: clamp(240px, 60vw, 500px);
+      height: auto;
+      min-height: 180px;
       background: url('images/signature.png') center center no-repeat;
       background-size: contain;
+      z-index: 1;
     }
 
     #main-container {
@@ -50,36 +63,138 @@
       max-width: 1024px;
       min-width: 320px;
       margin: 0 auto;
-      padding: 20px;
-     // background-color: #000000;
-      color: #ffffff;
-    }
-
-    #content h1 {
-      font-size: 1.3em;
-      font-weight: lighter;
-      margin: 0.77em 0 0.67em;
-    }
-
-    #content p {
-      color: #cccccc;
-      font-size: 24px;
-      font-weight: bold;
+      padding: 30px 20px;
       text-align: center;
     }
 
-    #content a {
-      color: #ff9900;
+    .section-title {
+      font-size: 20px;
+      color: #222;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-    #footer {
-      background-image: url('images/footer-trans.png');
+    .main-link {
+      font-size: 22px;
+      margin-bottom: 40px;
+      display: block;
+      color: #d35400;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-#second {margin-top:20px;}
-#second p {font-size:15px;col}
-#second a{color:}
-      </style>
+    .main-link:hover {
+      text-decoration: underline;
+    }
+
+    .card-description {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 16px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      justify-items: center;
+      padding-top: 30px;
+    }
+
+    .card {
+      background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      padding: 24px;
+      width: 100%;
+      max-width: 280px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    .card:hover {
+      background: linear-gradient(to bottom right, #ffffff, #e0f0ff);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      transform: translateY(-6px);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card a {
+      color: #e67e22;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+#footer {
+  background-image: url('images/footer-trans.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom; 
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+    @media (min-width: 768px) {
+      .link-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 767px) {
+  #header {
+    min-height: 200px !important;
+    height: auto !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0px; /* ✅ pull content upward */
+  }
+
+  #welcome {
+    width: 65%;
+    min-width: 160px;
+    min-height: 100px;
+    margin-top:40px;
+  }
+
+  #header::after {
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 40%, #ffffff 100%);
+  }
+}
+
+  </style>
 </head>
 <body>
   <div id="header">
@@ -88,33 +203,38 @@
 
   <div id="main-container">
     <div id="content">
-      <div id="main">
-      <p>Here is a link to my github repository<br>
-        <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io"><strong>https://github.com/Laura-Cepeda/Laura-Cepeda.github.io</strong></a>
-             </p>
-      </div> <!-- main -->
+      <p class="section-title">Here is a link to my GitHub repository:</p>
+      <a class="main-link" href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io">
+        https://github.com/Laura-Cepeda/Laura-Cepeda.github.io
+      </a>
 
-      
-     
-       <div id="second">
-      <p class="lesser">Core Javascript
-<a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript"><strong>/Core-Javascript</strong></a>
-          </p>
+      <p class="card-description">
+        These are sample projects and practice folders from my GitHub — including JavaScript and Selenium work. More to follow so stay tuned! – <i>L.C.</i>
+      </p>
 
-      <p class="lesser">Selenium Javascript
-<a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript"><strong>/Selenium-Javascript</strong></a>
-          </p>
+      <div class="card-wrapper">
+        <div class="link-grid">
 
-            <p class="lesser">Selenium Python
-<a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python"><strong>/Selenium-Python</strong></a>
-          </p>
-    </div> <!-- second -->
+          <div class="card">
+            <div class="card-title">Core Javascript</div>
+            <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript">/Core-Javascript</a>
+          </div>
 
-       
-  </div> <!--content container-->
+          <div class="card">
+            <div class="card-title">Selenium Javascript</div>
+            <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript">/Selenium-Javascript</a>
+          </div>
 
+          <div class="card">
+            <div class="card-title">Selenium Python</div>
+            <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python">/Selenium-Python</a>
+          </div>
+
+        </div><!-- end link-grid -->
+      </div><!-- end card-wrapper -->
+    </div>
   </div>
-      
+
   <div id="footer"></div>
 </body>
 </html>
