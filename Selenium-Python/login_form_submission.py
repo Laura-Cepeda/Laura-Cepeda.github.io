@@ -23,6 +23,8 @@ Note:
 - The script uses explicit sleeps for demonstration; consider using explicit waits for better reliability.
 - Exceptions are caught to log errors and ensure browser closure.
 """
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
