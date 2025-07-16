@@ -1,4 +1,4 @@
-"""
+""""
 Test Objective:
 Automate and validate the login and logout functionality on 'https://the-internet.herokuapp.com/'
 to ensure users can successfully authenticate and sign out.
