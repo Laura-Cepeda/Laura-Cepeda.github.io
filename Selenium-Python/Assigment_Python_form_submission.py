@@ -1,3 +1,28 @@
+"""
+Test Objective:
+Automate and validate the login and logout functionality on 'https://the-internet.herokuapp.com/'
+to ensure users can successfully authenticate and sign out.
+
+Steps Performed:
+1. Launch Firefox browser with custom options to disable pop-ups and notifications.
+2. Navigate to the homepage.
+3. Click on the 'Form Authentication' link.
+4. Enter valid username and password.
+5. Click the login button.
+6. Verify successful login by checking the success message.
+7. Click the logout button.
+8. Handle any exceptions and close the browser.
+
+Test Type:
+Functional Test - Positive Scenario
+
+Expected Result:
+User should be able to log in successfully and see a confirmation message, then log out properly.
+
+Note:
+- The script uses explicit sleeps for demonstration; consider using explicit waits for better reliability.
+- Exceptions are caught to log errors and ensure browser closure.
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
