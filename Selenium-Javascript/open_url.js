@@ -74,7 +74,7 @@ async function openGoogleInChrome() {
     
 
     // Close the driver
-   // await driver.quit();
+    await driver.quit();
 }
 
 // Call the function to open Google in Chrome
