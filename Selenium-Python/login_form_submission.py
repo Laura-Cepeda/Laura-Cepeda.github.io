@@ -22,6 +22,7 @@ User should be able to log in successfully and see a confirmation message, then 
 Note:
 - The script uses explicit sleeps for demonstration; consider using explicit waits for better reliability.
 - Exceptions are caught to log errors and ensure browser closure.
+Laura Cepeda
 """
 
 
