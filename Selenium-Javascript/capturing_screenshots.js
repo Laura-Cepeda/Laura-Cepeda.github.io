@@ -1,3 +1,41 @@
+/**
+ * -----------------------------------------------------------------------------
+ * QA AUTOMATION SCRIPT REPORT
+ * -----------------------------------------------------------------------------
+ * Test Objective:
+ *   - Validate login functionality of "The Internet" web application
+ *   - Ensure appropriate error handling when incorrect username is used
+ *   - Verify that the secure area is only accessible with correct credentials
+ * 
+ * Test Type:
+ *   - Functional Test (Negative Scenario)
+ *   - UI Automation using Selenium WebDriver (Chrome)
+ * 
+ * Steps Performed:
+ *   1. Launch Chrome browser with disabled popups and notifications
+ *   2. Navigate to https://the-internet.herokuapp.com/
+ *   3. Click on the "Form Authentication" link
+ *   4. Enter incorrect username ("tomsmithh") and correct password
+ *   5. Click on the login button
+ *   6. Verify the presence of the error message
+ *   7. Capture a screenshot of the login result
+ *   8. If login is successful (unexpected), capture screenshot and logout
+ *   9. Close the browser
+ * 
+ * Expected Result:
+ *   - Application should display an error message indicating invalid credentials
+ *   - Screenshot should be saved as "failed_login.png"
+ *   - No access to secure area should be granted
+ * 
+ * Notes:
+ *   - This script is currently configured for Chrome browser only
+ *   - Screenshots are saved in the root directory of the project
+ *   - Modify username to "tomsmith" to test successful login scenario
+ * -----------------------------------------------------------------------------
+ */
+
+
+
 // Import the necessary classes from selenium-webdriver
 const { Builder, By } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
