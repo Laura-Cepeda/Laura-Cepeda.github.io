@@ -38,6 +38,7 @@ Notes:
   - Script uses webdriver-manager to automatically manage ChromeDriver.
   - Includes explicit wait using time.sleep for demo purposes; can be improved with WebDriverWait.
   - Browser waits for manual confirmation before closing to allow inspection.
+  Laura Cepeda
 -----------------------------------------------------------------------------
 """
 
