@@ -1,3 +1,41 @@
+/**
+ * -----------------------------------------------------------------------------
+ * QA AUTOMATION SCRIPT REPORT
+ * -----------------------------------------------------------------------------
+ * Test Objective:
+ *   - Validate that the book prices displayed on https://books.toscrape.com/
+ *     match the prices stored in a local CSV file (books.csv)
+ *   - Identify and log any discrepancies between saved data and current data
+ * 
+ * Test Type:
+ *   - Data-Driven Test
+ *   - UI Automation using Selenium WebDriver (Chrome)
+ *   - Regression/Validation Check
+ * 
+ * Steps Performed:
+ *   1. Launch Chrome browser
+ *   2. Navigate to https://books.toscrape.com/
+ *   3. Read book data (Title, Price) from local CSV file (books.csv)
+ *   4. Extract current book data from the first 2 pages of the site
+ *   5. Compare prices for books found in both the saved CSV and current site
+ *   6. Log matched prices and price mismatches
+ *   7. Save any discrepancies to a new file (price_discrepancies.csv)
+ *   8. Close the browser
+ * 
+ * Expected Result:
+ *   - Each book in the CSV should match the current price shown on the website
+ *   - If a mismatch is found, it should be logged and written to price_discrepancies.csv
+ *   - Books not found on the website are logged as missing
+ * 
+ * Notes:
+ *   - This script currently supports only Chrome browser
+ *   - CSV file must be named "books.csv" and located in the project root
+ *   - Prices should be formatted consistently in both the site and CSV
+ * -----------------------------------------------------------------------------
+ */
+
+
+
 // Import the necessary classes from selenium-webdriver
 const { Builder, By } = require('selenium-webdriver');
 const fs = require('fs');
