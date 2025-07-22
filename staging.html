@@ -73,13 +73,13 @@
       color: var(--text);
       text-align: center;
       opacity: 0;
-      transform: translateX(-40px);
-      transition: transform 1.2s ease, opacity 1.2s ease;
+      transform: translateY(-50px);
+      transition: transform 1s ease, opacity 1s ease;
       visibility: hidden;
     }
     .left-sidebar.reveal {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
       visibility: visible;
     }
     .profile-photo {
@@ -131,9 +131,9 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       padding: 24px;
       border: 1px solid #ccc;
-      transition: transform 0.4s ease, opacity 0.4s ease;
+      transition: transform 0.6s ease, opacity 0.6s ease;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(-40px);
     }
     .card.reveal {
       opacity: 1;
@@ -170,11 +170,10 @@
       setTimeout(() => sidebar.classList.add("reveal"), 300);
       const cards = document.querySelectorAll(".card");
       cards.forEach((card, i) => {
-        setTimeout(() => card.classList.add("reveal"), i * 150 + 900);
+        setTimeout(() => card.classList.add("reveal"), i * 150 + 1000);
       });
     });
   </script>
-</head>
 <body>
   <div id="header"></div>
   <div class="two-column-layout">
@@ -256,7 +255,7 @@
           <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript" target="_blank">Read more →</a>
         </div>
         <div class="card">
-          <div class="card-title">Recent LinkedIn Post</div>
+          <div class="card-title">Learning in Progress: Selenium + Python Automation!</div>
           <img src="https://laura-cepeda.github.io/images/selenium.png" alt="Selenium Course Post" style="width: 120px; float: right; margin: 0 0 10px 16px; border-radius: 6px;">
           <p>I'm currently enrolled in the Selenium + Python Automation course and have completed the first project! I'm excited to share my progress as I continue building QA automation scripts.</p>
           <a href="https://www.linkedin.com/posts/lauracepeda-qa_learning-in-progress-selenium-python-automation-activity-7204037347023597569-UIGo" target="_blank">Read on LinkedIn →</a>
