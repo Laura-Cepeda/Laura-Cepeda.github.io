@@ -4,7 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laura's GitHub Portfolio</title>
-  <style>
+   
+</head>
+<body>
+  <div id="header">
+    <div id="welcome"></div>
+  </div>
+
+  <div id="main-container">
+    <div class="intro-box">
+      <p class="section-title">Welcome to my Developer Portfolio</p>
+      <a class="main-link" href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io">
+        github.com/Laura-Cepeda/Laura-Cepeda.github.io
+      </a>
+      <p class="intro-text">
+        This is a simple landing page I built to introduce myself and share a few hands-on examples of my coding work.  
+        You’ll find selected personal projects and practice scripts from GitHub — including JavaScript, Python, and Selenium automation.  
+        More to come as I continue learning and building.
+        <br><br><i>– L.C.</i>
+      </p>
+    </div>
+
+    <div class="resume-section">
+      <a class="resume-button" href="documents/Laura-Cepeda-Resume.pdf" download>
+        📄 Download My Resume
+      </a>
+      <div class="skills-list">
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Selenium</span>
+        <span class="skill-badge">QA Automation</span>
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">HTML/CSS</span>
+        <span class="skill-badge">Testing</span>
+        <span class="skill-badge">GitHub</span>
+      </div>
+    </div>
+
+<!-- start main card list -->
+    <div class="card-wrapper">
+      <div class="blog-grid">
+        <div class="card">
+          <div class="card-title">About Me</div>
+          <div>
+            <span class="tag">QA Automation</span>
+            <span class="tag">IT</span>
+            <span class="tag">Debugging</span>
+          </div>
+          <p>
+            I have been involved in QA Testing and Automation for nearly 10 years...
+          </p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Core JavaScript</div>
+          <div>
+            <span class="tag">JavaScript</span>
+            <span class="tag">ES6</span>
+            <span class="tag">DOM</span>
+          </div>
+          <p>
+            Practice scripts covering JavaScript fundamentals like arrays, functions, and DOM manipulation. A great place to start.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Selenium with JavaScript</div>
+          <div>
+            <span class="tag">Selenium</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Automation</span>
+          </div>
+          <p>
+            UI automation tests written using Selenium WebDriver and JavaScript. Includes real-world web testing examples.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Selenium with Python</div>
+          <div>
+            <span class="tag">Selenium</span>
+            <span class="tag">Python</span>
+            <span class="tag">Testing</span>
+          </div>
+          <p>
+            Automated browser tasks built using Python and Selenium. Great for QA workflows and data collection.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python">Read more →</a>
+        </div>
+
+
+        <div class="card">
+  <div class="card-title">API Testing</div>
+  <div>
+    <span class="tag">API</span>
+    <span class="tag">Postman</span>
+    <span class="tag">Automation</span>
+  </div>
+  <p>
+    A collection of API test scripts and request workflows using tools like Postman and automated assertions — great for backend validation.
+  </p>
+  <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/API-Testing">Read more →</a>
+</div>
+
+<!-- end main card list -->
+
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h2>Let’s Connect</h2>
+      <p>Email: <a href="mailto:laura@example.com">laura@example.com</a></p>
+      <a class="linkedin-button" href="https://www.linkedin.com/in/laura-cepeda" target="_blank">Connect on LinkedIn</a>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+ <style>
     * {
       margin: 0;
       padding: 0;
@@ -63,18 +183,20 @@
       flex: 1;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 5px 20px;
     }
 
-    .intro-box {
-      background: #fdfdfd;
-      border-left: 6px solid #e67e22;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-      padding: 40px 30px;
-      margin-bottom: 50px;
-      text-align: center;
-    }
+    
+.intro-box {
+  background: #fdfdfd;
+  border-left: 6px solid #e67e22;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 18px 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 
     .intro-box .section-title {
       font-size: 26px;
@@ -310,133 +432,57 @@ body::after {
   width: 100%;
   height: 220px;
   pointer-events: none;
-  background: linear-gradient(to top, rgba(220, 240, 245, 0.7) 10%, transparent 100%);
+  background: linear-gradient(to top, rgba(220, 240, 245, 0.4) 10%, transparent 100%);
   z-index: 10;
 }
 
 .linkedin-button {
   margin-bottom: 80px;
 }
+
+
+.tag, .skill-badge {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tag.visible, .skill-badge.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
 </style>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = Array.from(document.querySelectorAll(".skill-badge, .tag"));
   
-</head>
-<body>
-  <div id="header">
-    <div id="welcome"></div>
-  </div>
+  // Shuffle for random animation order
+  for (let i = elements.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [elements[i], elements[j]] = [elements[j], elements[i]];
+  }
 
-  <div id="main-container">
-    <div class="intro-box">
-      <p class="section-title">Welcome to my Developer Portfolio</p>
-      <a class="main-link" href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io">
-        github.com/Laura-Cepeda/Laura-Cepeda.github.io
-      </a>
-      <p class="intro-text">
-        This is a simple landing page I built to introduce myself and share a few hands-on examples of my coding work.  
-        You’ll find selected personal projects and practice scripts from GitHub — including JavaScript, Python, and Selenium automation.  
-        More to come as I continue learning and building.
-        <br><br><i>– L.C.</i>
-      </p>
-    </div>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+        // Delay based on position in shuffled array
+        const delay = elements.indexOf(entry.target) * 90;
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
 
-    <div class="resume-section">
-      <a class="resume-button" href="documents/Laura-Cepeda-Resume.pdf" download>
-        📄 Download My Resume
-      </a>
-      <div class="skills-list">
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">Selenium</span>
-        <span class="skill-badge">QA Automation</span>
-        <span class="skill-badge">Node.js</span>
-        <span class="skill-badge">HTML/CSS</span>
-        <span class="skill-badge">Testing</span>
-        <span class="skill-badge">GitHub</span>
-      </div>
-    </div>
-
-<!-- start main card list -->
-    <div class="card-wrapper">
-      <div class="blog-grid">
-        <div class="card">
-          <div class="card-title">About Me</div>
-          <div>
-            <span class="tag">QA Automation</span>
-            <span class="tag">IT</span>
-            <span class="tag">Debugging</span>
-          </div>
-          <p>
-            I have been involved in QA Testing and Automation for nearly 10 years...
-          </p>
-          <a href="#">Read more →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Core JavaScript</div>
-          <div>
-            <span class="tag">JavaScript</span>
-            <span class="tag">ES6</span>
-            <span class="tag">DOM</span>
-          </div>
-          <p>
-            Practice scripts covering JavaScript fundamentals like arrays, functions, and DOM manipulation. A great place to start.
-          </p>
-          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript">Read more →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Selenium with JavaScript</div>
-          <div>
-            <span class="tag">Selenium</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Automation</span>
-          </div>
-          <p>
-            UI automation tests written using Selenium WebDriver and JavaScript. Includes real-world web testing examples.
-          </p>
-          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript">Read more →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Selenium with Python</div>
-          <div>
-            <span class="tag">Selenium</span>
-            <span class="tag">Python</span>
-            <span class="tag">Testing</span>
-          </div>
-          <p>
-            Automated browser tasks built using Python and Selenium. Great for QA workflows and data collection.
-          </p>
-          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python">Read more →</a>
-        </div>
+  elements.forEach(el => observer.observe(el));
+});
+</script>
 
 
-        <div class="card">
-  <div class="card-title">API Testing</div>
-  <div>
-    <span class="tag">API</span>
-    <span class="tag">Postman</span>
-    <span class="tag">Automation</span>
-  </div>
-  <p>
-    A collection of API test scripts and request workflows using tools like Postman and automated assertions — great for backend validation.
-  </p>
-  <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/API-Testing">Read more →</a>
-</div>
 
-<!-- end main card list -->
-
-      </div>
-    </div>
-
-    <div class="contact-section">
-      <h2>Let’s Connect</h2>
-      <p>Email: <a href="mailto:laura@example.com">laura@example.com</a></p>
-      <a class="linkedin-button" href="https://www.linkedin.com/in/laura-cepeda" target="_blank">Connect on LinkedIn</a>
-    </div>
-  </div>
-
-  <div id="footer"></div>
-</body>
 </html>
