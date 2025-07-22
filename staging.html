@@ -4,36 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laura's GitHub Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #2b2b2b;
+      --sidebar-bg: #ffffff;
+      --card-bg: #ffffff;
+      --accent: #d35400;
+      --font: 'Plus Jakarta Sans', sans-serif;
+      --tag-bg: #f2f9f3;
+      --tag-color: #2e7d32;
+    }
+    [data-theme="dark"] {
+      --bg: #1c1c1c;
+      --text: #f0f0f0;
+      --sidebar-bg: #2c2c2c;
+      --card-bg: #333;
+      --accent: #f39c12;
+      --font: 'Space Grotesk', sans-serif;
+      --tag-bg: #444;
+      --tag-color: #f0f0f0;
+    }
+    [data-theme="sunset"] {
+      --bg: #fff4e6;
+      --text: #4e2c2c;
+      --sidebar-bg: #ffeadb;
+      --card-bg: #fff6ee;
+      --accent: #d35400;
+      --font: 'Playfair Display', serif;
+      --tag-bg: #fce5cd;
+      --tag-color: #7f2f00;
+    }
+    [data-theme="aqua"] {
+      --bg: #e0f7fa;
+      --text: #004d40;
+      --sidebar-bg: #b2ebf2;
+      --card-bg: #e0f2f1;
+      --accent: #00796b;
+      --font: 'Space Grotesk', sans-serif;
+      --tag-bg: #b2dfdb;
+      --tag-color: #004d40;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html, body {
-      
-      font-family: "Plus Jakarta Sans", sans-serif;
+      font-family: var(--font);
       font-size: 16px;
-      color: #2b2b2b;
+      color: var(--text);
       line-height: 1.6;
-      background: #ffffff;
+      background: var(--bg);
     }
-
+    #theme-toggle {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 1000;
+    }
     #header {
-  background-image: url('images/wideheader.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 25%;
-  min-height: 320px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 40px;
-  position: relative;
-}
-
+      background-image: url('images/wideheader.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 25%;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 40px;
+      position: relative;
+    }
     #header::after {
       content: "";
       position: absolute;
@@ -41,39 +91,32 @@
       left: 0;
       width: 100%;
       height: clamp(40px, 15%, 80px);
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, #ffffff 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, var(--bg) 100%);
       z-index: 0;
     }
-
     #welcome {
-  width: clamp(200px, 50vw, 400px);
-  height: 120px;
-  background: url('images/signature.png') center center no-repeat;
-  background-size: contain;
-  z-index: 1;
-}
-
+      width: clamp(200px, 50vw, 400px);
+      height: 120px;
+      background: url('images/signature.png') center center no-repeat;
+      background-size: contain;
+      z-index: 1;
+    }
     .two-column-layout {
       display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 40px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px;
     }
-
     .left-sidebar {
       flex: 1 1 320px;
       padding: 24px 20px;
-      
-      background: #ffffff;
+      background: var(--sidebar-bg);
       border-right: 1px solid #e0e0e0;
-      
       min-height: 100%;
-      font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 15px;
-      color: #3a3a3a;
+      color: var(--text);
       text-align: center;
     }
-
     .profile-photo {
       width: 120px;
       height: 120px;
@@ -84,236 +127,158 @@
       background-position: center;
       margin: 0 auto 16px;
     }
-
-    .profile-name {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
     .right-main {
       flex: 2 1 600px;
-  padding: 40px 32px;
+      padding: 40px 32px;
     }
-
     .intro-box {
-      border-left: 4px solid #e67e22;
+      border-left: 4px solid var(--accent);
       border-radius: 10px;
-      background: #ffffff;
+      background: var(--card-bg);
       padding: 16px;
       margin-bottom: 30px;
       font-style: italic;
     }
-
     .intro-box .section-title {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 12px;
     }
-
     .intro-box .main-link {
       font-size: 15px;
       display: inline-block;
       margin: 8px 0;
-      color: #d35400;
+      color: var(--accent);
       font-weight: 600;
       text-decoration: none;
     }
-
     .intro-box .main-link:hover {
       text-decoration: underline;
     }
-
-    .resume-section {
-      text-align: center;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .skill-badge {
-      background: #f0f0f0;
-      color: #444;
-      padding: 6px 12px;
-      font-size: 13px;
-      border-radius: 12px;
-      font-weight: 500;
-    }
-
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-
     .card {
-      background: #ffffff;
+      background: var(--card-bg);
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       padding: 24px;
-      border: 1px solid #eee;
+      border: 1px solid #ccc;
       transition: transform 0.2s ease;
     }
-
     .card:hover {
       transform: translateY(-4px);
     }
-
     .card-title {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 10px;
     }
-
     .card p {
       font-size: 15px;
-      color: #555;
+      color: var(--text);
     }
-
     .tag {
       display: inline-block;
-      background: #f2f9f3;
-      color: #2e7d32;
+      background: var(--tag-bg);
+      color: var(--tag-color);
       font-size: 12px;
       padding: 4px 10px;
       border-radius: 12px;
       margin: 4px 6px 0 0;
     }
-
     .card a {
       font-size: 14px;
-      color: #d35400;
+      color: var(--accent);
       font-weight: 600;
       text-decoration: none;
     }
-
-    .contact-section {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .linkedin-button {
-      display: inline-block;
-      margin-top: 15px;
-      background: #0077b5;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
-    }
   </style>
+  <script>
+    const themes = ["", "dark", "sunset", "aqua"];
+    let currentTheme = 0;
+    function cycleTheme() {
+      currentTheme = (currentTheme + 1) % themes.length;
+      document.documentElement.setAttribute("data-theme", themes[currentTheme]);
+    }
+  </script>
 </head>
 <body>
-  <div id="header">
-    
-  </div>
-
+  <button id="theme-toggle" onclick="cycleTheme()">Switch Theme</button>
+  <div id="header"></div>
   <div class="two-column-layout">
     <aside class="left-sidebar">
       <div class="profile-photo"></div>
       <div id="welcome" style="margin: 0 auto 20px auto;"></div>
       <div class="intro-box">
-  <p class="section-title">Welcome to my Developer Portfolio</p>
-  <a class="main-link" href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io">
-    github.com/Laura-Cepeda.github.io
-  </a>
-  <p>
-    Welcome! This landing page is a quick introduction to who I am and what I’ve been working on. Here, you’ll find a few of my personal projects and practice scripts from GitHub covering JavaScript, Python, and Selenium automation. I’m always learning, so stay tuned for more updates as I continue to grow and build. 
-    <br><br><i>– L.C.</i>
-  </p>
-</div>
-
-<div class="resume-section">
-  <div class="skills-list">
-    <span class="skill-badge">JavaScript</span>
-    <span class="skill-badge">Python</span>
-    <span class="skill-badge">Selenium</span>
-    <span class="skill-badge">QA Automation</span>
-    <span class="skill-badge">Node.js</span>
-    <span class="skill-badge">HTML/CSS</span>
-    <span class="skill-badge">Testing</span>
-    <span class="skill-badge">GitHub</span>
-  </div>
-  </div>
-<div class="contact-section">
-  <h2>Let’s Connect</h2>
-  <p>Email: <a href="mailto:laura.cepedab@gmail.com">laura.cepedab@gmail.com</a></p>
-  <a class="linkedin-button" href="https://www.linkedin.com/in/lauracepeda-qa/" target="_blank">Connect on LinkedIn</a>
-</div>
-</aside>
+        <p class="section-title">Welcome to my Developer Portfolio</p>
+        <a class="main-link" href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io">github.com/Laura-Cepeda.github.io</a>
+        <p>
+          Welcome! This landing page is a quick introduction to who I am and what I’ve been working on. Here, you’ll find a few of my personal projects and practice scripts from GitHub covering JavaScript, Python, and Selenium automation. I’m always learning, so stay tuned for more updates as I continue to grow and build.
+          <br><br><i>– L.C.</i>
+        </p>
+      </div>
+    </aside>
     <main class="right-main">
-  <div class="blog-grid">
-    
-    <div class="card">
-      <div class="card-title">About Me</div>
-      <div>
-        <span class="tag">QA Automation</span>
-        <span class="tag">IT</span>
-        <span class="tag">Debugging</span>
+      <div class="blog-grid">
+        <div class="card">
+          <div class="card-title">About Me</div>
+          <div>
+            <span class="tag">QA Automation</span>
+            <span class="tag">IT</span>
+            <span class="tag">Debugging</span>
+          </div>
+          <p>
+            I'm a QA Analyst & Platform Engineer focused on software quality and platform stability.
+          </p>
+          <a href="https://www.linkedin.com/in/lauracepeda-qa/" target="_blank">Read more →</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Selenium with Python</div>
+          <div>
+            <span class="tag">Selenium</span>
+            <span class="tag">Python</span>
+            <span class="tag">Testing</span>
+          </div>
+          <p>
+            Automation examples using Python and Selenium.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python" target="_blank">Read more →</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Selenium with JavaScript</div>
+          <div>
+            <span class="tag">Selenium</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Automation</span>
+          </div>
+          <p>
+            QA automation using Selenium WebDriver and JavaScript.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript" target="_blank">Read more →</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Core JavaScript</div>
+          <div>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Debugging</span>
+            <span class="tag">DOM</span>
+          </div>
+          <p>
+            Practice scripts covering JS fundamentals and DOM manipulation.
+          </p>
+          <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript" target="_blank">Read more →</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Recent LinkedIn Post</div>
+          <img src="https://laura-cepeda.github.io/images/selenium.png" alt="Selenium Course Post" style="width: 120px; float: right; margin: 0 0 10px 16px; border-radius: 6px;">
+          <p>I'm currently enrolled in the Selenium + Python Automation course and have completed the first project! I'm excited to share my progress as I continue building QA automation scripts.</p>
+          <a href="https://www.linkedin.com/posts/lauracepeda-qa_learning-in-progress-selenium-python-automation-activity-7204037347023597569-UIGo" target="_blank">Read on LinkedIn →</a>
+        </div>
       </div>
-      <p>
-        I'm a QA Analyst & Platform Engineer focused on software quality and platform stability.
-      </p>
-      <a href="https://www.linkedin.com/in/lauracepeda-qa/" target="_blank">Read more →</a>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Selenium with Python</div>
-      <div>
-        <span class="tag">Selenium</span>
-        <span class="tag">Python</span>
-        <span class="tag">Testing</span>
-      </div>
-      <p>
-        Automation examples using Python and Selenium.
-      </p>
-      <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Python" target="_blank">Read more →</a>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Selenium with JavaScript</div>
-      <div>
-        <span class="tag">Selenium</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Automation</span>
-      </div>
-      <p>
-        QA automation using Selenium WebDriver and JavaScript.
-      </p>
-      <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Selenium-Javascript" target="_blank">Read more →</a>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Core JavaScript</div>
-      <div>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Debugging</span>
-        <span class="tag">DOM</span>
-      </div>
-      <p>
-        Practice scripts covering JS fundamentals and DOM manipulation.
-      </p>
-      <a href="https://github.com/Laura-Cepeda/Laura-Cepeda.github.io/tree/main/Core-Javascript" target="_blank">Read more →</a>
-    </div>
-
-<div class="card">
-      <div class="card-title">Recent LinkedIn Post</div>
-      <img src="https://laura-cepeda.github.io/images/selenium.png" alt="Selenium Course Post" style="width: 120px; float: right; margin: 0 0 10px 16px; border-radius: 6px;">
-      <p>I'm currently enrolled in the Selenium + Python Automation course and have completed the first project! I'm excited to share my progress as I continue building QA automation scripts.</p>
-      <a href="https://www.linkedin.com/posts/lauracepeda-qa_learning-in-progress-selenium-python-automation-activity-7204037347023597569-UIGo" target="_blank">Read on LinkedIn →</a>
-    </div>
-
-  </div>
-
-  
-</main>
+    </main>
   </div>
 </body>
 </html>
