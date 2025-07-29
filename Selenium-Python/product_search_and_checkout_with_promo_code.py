@@ -49,6 +49,8 @@ Notes:
   - Script combines `implicitly_wait` and `WebDriverWait` to handle dynamic loading.
   - `time.sleep(3)` is used to allow UI to update before collecting filtered products.
   - Includes `input()` pause for manual inspection before browser closes.
+  
+  -L.Cepeda
 
 -----------------------------------------------------------------------------
 """
